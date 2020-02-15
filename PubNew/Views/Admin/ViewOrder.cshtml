@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PubNew.Models.Order>
+
+@{
+    ViewBag.Title = "ViewUserOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var oreder in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => oreder.User.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => oreder.CreatDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => oreder.TotalPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "OrderDetail", new { id = oreder.OrderID })            
+            </td>
+        </tr>
+    }
+
+</table>

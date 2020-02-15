@@ -1,0 +1,54 @@
+﻿@model IEnumerable<PubNew.Models.Item>
+
+@{
+    ViewBag.Title = "FoodManage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FoodManage</h2>
+
+<p>
+    @Html.ActionLink("Add Food", "AddFood")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isAvailable)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isAvailable)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditItem", new { id = item.ItemID }) |
+                @Html.ActionLink("Details", "ItemDetail", new { id = item.ItemID }) 
+                
+            </td>
+        </tr>
+    }
+
+</table>

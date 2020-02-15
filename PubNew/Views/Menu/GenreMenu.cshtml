@@ -1,0 +1,29 @@
+﻿@model IEnumerable<PubNew.Models.Item>
+@using PubNew.Models
+@using System.Web.Mvc.Html
+
+<div>
+<ul id="categories">
+
+    @if (User.IsInRole("AppAdmin"))
+
+    {
+        <li>
+            @Html.ActionLink("View Customer’s order", "ViewOrder", "Admin") 
+        </li>
+        <li>
+            @Html.ActionLink("Food item Manage", "FoodManage" , "Admin")
+        </li>
+
+    }
+
+
+    <li>
+        @Html.ActionLink("Drink", "FoodMenu", "Menu", new { Category = "drink" }, "")
+    </li>
+    <li>
+        @Html.ActionLink("Snake", "FoodMenu", "Menu", new { Category = "snack" }, "")
+    </li>
+
+</ul>
+</div>

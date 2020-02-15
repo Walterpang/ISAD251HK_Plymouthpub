@@ -1,0 +1,73 @@
+﻿@model PubNew.Models.Order
+
+
+@{
+    ViewBag.Title = "OrderDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stauts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stauts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+        <dt>
+            Order Item
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Food name </th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+                @foreach (var item in Model.orderitems)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.item.ItemName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "UserPage", new { id = Model.UserID} )
+</p>

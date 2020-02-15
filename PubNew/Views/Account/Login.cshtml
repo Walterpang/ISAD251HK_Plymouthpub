@@ -1,0 +1,69 @@
+﻿@using PubNew.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    Please enter your user name and password. @Html.ActionLink("Register", "Register") if you don't have an account.
+</p>
+
+<h2>@ViewBag.Title.</h2>
+
+@if (Request.IsAuthenticated)
+{
+    @Html.ActionLink("home", "index","home")
+}
+else
+{
+<div class="row">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <fieldset>
+                    @Html.AntiForgeryToken()
+
+                    <legend>Account Information</legend>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Email)
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(m => m.Email)
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Password)
+                    </div>
+                    <div class="editor-field">
+                        @Html.PasswordFor(m => m.Password)
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="editor-label">
+                    </div>
+                    <div>
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                    <p>
+                        <input type="submit" value="Login" />
+                    </p>
+                </fieldset>
+            }
+        </section>
+    </div>
+    <div class="col-lg-3">
+        <section id="socialLoginForm"></section>
+    </div>
+</div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

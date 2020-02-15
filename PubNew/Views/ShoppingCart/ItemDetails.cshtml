@@ -1,0 +1,35 @@
+﻿@model PubNew.Models.Item
+
+
+@{
+    ViewBag.Title = "Item - " + Model.ItemName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.ItemName</h2>
+
+<p>
+    <img alt="@Model.ItemName" src="@Model.ItemArt" />
+</p>
+
+<div id="Item-details">
+    <p>
+        <em>Item name:</em>
+        @Html.DisplayFor(model => model.ItemName)
+    </p>
+
+    <p>
+        <em>@Html.DisplayNameFor(model => model.Description)</em>
+        @Html.DisplayFor(model => model.Description)
+    </p>
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}", Model.Price)
+    </p>
+
+
+    <p class="button">
+        @Html.ActionLink("Add tocart", "AddToCart",
+        "ShoppingCart", new { id = Model.ItemID }, "")
+    </p>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="417a2d0c432d44cca8692c5b43524f20" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="PubNewModel.AspNetRoles" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PubNewModel.AspNetUsers" Width="2.125" PointX="0.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PubNewModel.Cart" Width="1.5" PointX="6.875" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PubNewModel.Item" Width="1.5" PointX="3.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PubNewModel.Order" Width="2" PointX="5.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PubNewModel.OrderItem" Width="1.5" PointX="8.625" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PubNewModel.AspNetUserRoles" Width="2.625" PointX="4.25" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="PubNewModel.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="PubNewModel.FK_dbo_AspNetUserRoles_dbo_User_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PubNewModel.FK_dbo_Order_dbo_User_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="PubNewModel.FK_dbo_Cart_dbo_Item_ItemId" ManuallyRouted="false" />
+        <AssociationConnector Association="PubNewModel.FK_dbo_OrderItem_dbo_Item_ItemID" ManuallyRouted="false" />
+        <AssociationConnector Association="PubNewModel.FK_dbo_OrderItem_dbo_Order_OrderID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

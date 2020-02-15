@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Plymouth Pub</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript" src="/test/wp-content/themes/child/script/jquery.jcarousel.min.js"></script>
+</head>
+<body>
+
+    <div id="header">
+
+        <h1>
+        <img src="/content/Images/Logo.png" id="logo">
+        Plymouth Pub
+        <ul id="navlist">
+            <li class="first">
+            </li>
+            <li>
+                @Html.Partial("_LoginPartial")
+            </li>
+        </ul>
+    </div>
+    </h1>
+    <div class="categories">@{Html.RenderAction("GenreMenu", "Menu");}</div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+        </div>
+    <div>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Plymouth Pub</p>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

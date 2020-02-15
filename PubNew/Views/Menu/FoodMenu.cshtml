@@ -1,0 +1,33 @@
+﻿@model  IEnumerable<PubNew.Models.Item>
+
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="genre">
+
+    <ul id="album-list">
+        @foreach (var item in Model)
+        {
+        <li>
+            <a href="@Url.Action("ItemDetails","ShoppingCart", new { id = item.ItemID })">
+
+                @if (item.ItemArt == null)
+                {
+                    <img alt="@item.ItemName" src="/Content/images/logo3.png">
+                }
+                else
+                {
+                    <img alt="@item.ItemName" src="@item.ItemArt">
+                }
+                <span>@item.ItemName</span>
+            </a>
+            <p class="button">
+                @Html.ActionLink("Add tocart", "AddToCart",
+                "ShoppingCart", new { id = item.ItemID }, "")
+            </p>
+        </li>
+        }
+    </ul>
+</div>

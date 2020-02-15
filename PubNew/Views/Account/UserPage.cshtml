@@ -1,0 +1,31 @@
+﻿@model PubNew.Models.User
+
+@{
+    ViewBag.Title = "UserDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <hr />
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.UserName)
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.Email)
+            </th>
+        </tr>
+    </table>
+
+    @Html.ActionLink("View Order History", "UserOrderHistory", new { id = Model.Id })
+</div>
