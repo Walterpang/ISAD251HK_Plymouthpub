@@ -19,7 +19,7 @@ Order History
 ![image](Pub/Orderhistory.jpg)
 
 Edit drink/snack
-![image](Pub/editeFood.jpg)
+![image](Pub/editFood.jpg)
 
 add a drink/snack
-![image](Pub/additem.jpg)
+![image](Pub/addItem.jpg)
