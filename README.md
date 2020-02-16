@@ -36,7 +36,7 @@ add a drink/snack
 
 
 ### Application fact sheet
-
+----
 The Application Called "Pub", is an application that will provide the ability for a customer to order drinks and snacks from a menu and be able to view what they ordered, and what they order before. When user is viewing menu, user can click the picture to more detail or the item, for they can consider ordering it or not. 
 
 As an admin would have more function. First, he can view all food or snack item, admin can edit all the item details, and he can edit the details of the drinks/snacks for sale or withdraw a drink/snack from sale. Withdraw an item would not delete the item, it only will not show for users. Also, he can add a drink or snack, and admin can update the detail of the drink or snack when he wants. Admin can view all the customer’s orders, also can view the details of the order, what the customer ordered. 
