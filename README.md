@@ -45,14 +45,14 @@ The application login is using email to login, avoid the same username problem. 
 
 
 As a normal user:
-1.Order a drink/food
-2.view their order
-3.Add to an order
-4.Cancel an order
+1. Order a drink/food
+2. view their order
+3. Add to an order
+4. Cancel an order
 
 As a admin:
-1.Add an Item
-2.Edit an Item
-3.view all Orders
-3.view items detail
-4.withdraw a drink/snack from sale
+1. Add an Item
+2. Edit an Item
+3. view all Orders
+3. view items detail
+4. withdraw a drink/snack from sale
